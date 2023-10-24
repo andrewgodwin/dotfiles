@@ -1,0 +1,53 @@
+[user]
+    name = Andrew Godwin
+    email = andrew@aeracode.org
+
+[alias]
+    st = status
+    di = diff
+    dif = diff
+    dic = diff --cached
+    ci = commit
+    cia = commit -a
+    br = branch
+    pul = pull --rebase
+    pulp = !git stash && git pul && git stash pop
+    pus = push
+    puls = !git pull --rebase && git push
+    addr = add -A :/
+    addremove = add -A :/
+    co = clone
+    cogh = "!f() { git clone git@github.com:$1; }; f"
+    ch = checkout
+    cat = show
+    cp = cherry-pick
+    pust = !git push && git push --tags
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = true
+
+[core]
+    excludesfile = ~/.gitexclude
+    filemode = false
+
+[push]
+        default = simple
+
+[url "git@github.com:"]
+        insteadOf = https://github.com/
+
+[branch]
+        autosetuprebase = always
+        autosetupmerge = always
+
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+
+[init]
+        defaultBranch = main
