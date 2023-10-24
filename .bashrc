@@ -128,8 +128,10 @@ if [ -e /etc/bash_completion ]; then
 fi
 
 # Ensure that we have an ssh config with AddKeysToAgent set to true
-if [ ! -f ~/.ssh/config ] || ! cat ~/.ssh/config | grep AddKeysToAgent | grep yes > /dev/null; then
-    echo "AddKeysToAgent  yes" >> ~/.ssh/config
+if [ -e ~/.ssh/config ]; then
+    if [ ! -f ~/.ssh/config ] || ! cat ~/.ssh/config | grep AddKeysToAgent | grep yes > /dev/null; then
+        echo "AddKeysToAgent  yes" >> ~/.ssh/config
+    fi
 fi
 
 #fi
