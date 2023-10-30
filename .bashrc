@@ -1,19 +1,19 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
 HISTSIZE=20000
 HISTFILESIZE=20000
 
-# check the window size after each command and, if necessary,
+# Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+# Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     if [ `uname` == "Darwin" ]; then
         export CLICOLOR=1
@@ -54,9 +54,6 @@ alias sharedir='python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 # I hate losing my place.
 alias cd='pushd > /dev/null'
 alias uncd='popd > /dev/null'
-
-# PostgreSQL settings
-export PGUSER=postgres
 
 # Picks a random colour based on the hostname.
 function color_from_hostname {
@@ -108,18 +105,6 @@ title () {
 }
 title "\w"
 
-# Virtualenvwrapper settings
-WORKON_HOME=~/Envs
-VIRTUAL_ENV_DISABLE_PROMPT=True
-if [ -e "/usr/share/bash-completion/completions/virtualenvwrapper" ]; then
-    source /usr/share/bash-completion/completions/virtualenvwrapper
-fi
-if [ -e "/usr/local/bin/pyenv" ]; then
-    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-    eval "$(pyenv init -)"
-    pyenv virtualenvwrapper_lazy
-fi
-
 export EDITOR=vim
 
 # Completion
@@ -134,14 +119,28 @@ if [ -e ~/.ssh/config ]; then
     fi
 fi
 
-#fi
+# If keychain is available, load it as a session
 if [ -e /usr/bin/keychain ]; then
     /usr/bin/keychain -q --nogui $HOME/.ssh/id_ecdsa
     source $HOME/.keychain/$HOSTNAME-sh
 fi
 
+# Python
+export WORKON_HOME=~/Envs
+export PYENV_ROOT="$HOME/.pyenv"
+VIRTUAL_ENV_DISABLE_PROMPT=True
+if [ -e "/usr/share/bash-completion/completions/virtualenvwrapper" ]; then
+    source /usr/share/bash-completion/completions/virtualenvwrapper
+fi
+if [ -e "$PYENV_ROOT/bin/pyenv" ]; then
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+    pyenv virtualenvwrapper_lazy
+fi
+
 # Go
 export GOPATH=~/Programs/go
 
-# Completion
-# source <(kubectl completion bash)
+# PostgreSQL settings
+export PGUSER=postgres
