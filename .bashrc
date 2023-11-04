@@ -105,7 +105,12 @@ title () {
 }
 title "\w"
 
-export EDITOR=vim
+# Set editor based on if we're in a VS Code shell or not
+if [ -z $VSCODE_IPC_HOOK_CLI ]; then
+    export EDITOR=vim
+else
+    export EDITOR="code --wait"
+fi
 
 # Completion
 if [ -e /etc/bash_completion ]; then
