@@ -1,0 +1,2 @@
+startup_message off
+hardstatus alwayslastline "%{= bR}[%{= bY}%H%{= bR}]%{= bY} %n%{= bR}:%{= bY}%t  %{= bw}%W %=%{= br}[%{= bY}%h%{= bR}]"
