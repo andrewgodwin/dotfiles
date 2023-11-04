@@ -85,9 +85,9 @@ function color_from_hostname {
 
 # VCS functions
 parse_git_branch () {
-        if [ -d ".git" -o -d "../.git" -o -d "../../.git" -o -d "../../../.git" -o -d "../../../../.git" ]; then
-                git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)#git:\1 #'
-        fi
+    if [ -d ".git" -o -d "../.git" -o -d "../../.git" -o -d "../../../.git" -o -d "../../../../.git" ]; then
+            git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)#git:\1 #'
+    fi
 }
 virtualenvname () {
     if [ `echo $VIRTUAL_ENV` ]; then
@@ -101,7 +101,7 @@ command_exists () {
 # Customised prompt; shows git/venv status too
 PROMPT_DIRTRIM=2
 title () {
-        PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h \[\e[40m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[42m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
+    PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h \[\e[40m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[42m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
 }
 title "\w"
 
