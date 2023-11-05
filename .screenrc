@@ -1,2 +1,3 @@
 startup_message off
-hardstatus alwayslastline "%{= bR}[%{= bY}%H%{= bR}]%{= bY} %n%{= bR}:%{= bY}%t  %{= bw}%W %=%{= br}[%{= bY}%h%{= bR}]"
+hardstatus alwaysfirstline "%{= Kw} %H %{= Wk} %n:%t %{= Kw} %W %=%{= Kw}[%h]"
+termcapinfo xterm* ti@:te@
