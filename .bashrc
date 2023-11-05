@@ -55,9 +55,18 @@ alias sharedir='python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias cd='pushd > /dev/null'
 alias uncd='popd > /dev/null'
 
-# Alias that needs parameters
+# Aliases that need parameters
 function tomp3 {
     ffmpeg -i "$1" -q:a 0 -map a "$1.mp3"
+}
+
+function set730fan {
+    USER=root
+    IP="192.168.2.4"
+    # Enable manual control
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x01 0x00
+    # Set overall fan speed (last byte should be 0x00 - 0x64)
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x12
 }
 
 # Picks a random colour based on the hostname.
