@@ -42,9 +42,9 @@ alias rmsync='find . -name "*.sync-conflict-*" -print0 | xargs -0 rm -rf'
 alias psgrep='ps -AF | grep'
 alias pullall='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pul \;'
 alias kc='kubectl'
-alias airdir='cd ~/Programs/airflow; workon airflow'
-alias tkdir='cd ~/Programs/takahe; workon takahe'
-alias aerdir='cd ~/Programs/aeracode; workon aeracode'
+alias airdir='cd ~/Programs/airflow; pyenv shell airflow'
+alias tkdir='cd ~/Programs/takahe; pyenv shell takahe'
+alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
 alias venusaur="ssh -t root@venusaur.internal.aeracode.org"
 alias charizard="ssh -t andrew@192.168.2.6 -- screen -d -R"
 
@@ -131,17 +131,12 @@ if [ -e /usr/bin/keychain ]; then
 fi
 
 # Python
-export WORKON_HOME=~/Envs
 export PYENV_ROOT="$HOME/.pyenv"
 VIRTUAL_ENV_DISABLE_PROMPT=True
-if [ -e "/usr/share/bash-completion/completions/virtualenvwrapper" ]; then
-    source /usr/share/bash-completion/completions/virtualenvwrapper
-fi
 if [ -e "$PYENV_ROOT/bin/pyenv" ]; then
-    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
-    pyenv virtualenvwrapper_lazy
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 # Go
