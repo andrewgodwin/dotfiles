@@ -46,7 +46,7 @@ alias airdir='cd ~/Programs/airflow; pyenv shell airflow'
 alias tkdir='cd ~/Programs/takahe; pyenv shell takahe'
 alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
 alias venusaur="ssh -t root@venusaur.internal.aeracode.org"
-alias charizard="ssh -t andrew@192.168.2.6 -- screen -d -R"
+alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- screen -d -R"
 
 # Shares current dir on port 8000
 alias sharedir='python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
