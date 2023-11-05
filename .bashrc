@@ -132,7 +132,8 @@ fi
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
-VIRTUAL_ENV_DISABLE_PROMPT=True
+export VIRTUAL_ENV_DISABLE_PROMPT=True
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if [ -e "$PYENV_ROOT/bin/pyenv" ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
