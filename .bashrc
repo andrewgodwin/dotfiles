@@ -45,7 +45,7 @@ alias kc='kubectl'
 alias airdir='cd ~/Programs/airflow; pyenv shell airflow'
 alias tkdir='cd ~/Programs/takahe; pyenv shell takahe'
 alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
-alias venusaur="ssh -t root@venusaur.internal.aeracode.org"
+alias hydrae="ssh -t root@hydrae.aeracode.org -- screen -d -R"
 alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- screen -d -R"
 
 # Shares current dir on port 8000
@@ -54,6 +54,11 @@ alias sharedir='python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 # I hate losing my place.
 alias cd='pushd > /dev/null'
 alias uncd='popd > /dev/null'
+
+# Alias that needs parameters
+function tomp3 {
+    ffmpeg -i "$1" -q:a 0 -map a "$1.mp3"
+}
 
 # Picks a random colour based on the hostname.
 function color_from_hostname {
