@@ -66,7 +66,7 @@ function set730fan {
     # Enable manual control
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x01 0x00
     # Set overall fan speed (last byte should be 0x00 - 0x64)
-    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x12
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x15
 }
 
 # Picks a random colour based on the hostname.
@@ -139,7 +139,7 @@ if [ -e ~/.ssh/config ]; then
 fi
 
 # If keychain is available, load it as a session
-if [ -e /usr/bin/keychain ]; then
+if [ -e /usr/bin/keychain ] && [ -e $HOME/.ssh/id_ecdsa ]; then
     /usr/bin/keychain -q --nogui $HOME/.ssh/id_ecdsa
     source $HOME/.keychain/$HOSTNAME-sh
 fi
