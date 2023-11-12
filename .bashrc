@@ -66,7 +66,7 @@ function set730fan {
     # Enable manual control
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x01 0x00
     # Set overall fan speed (last byte should be 0x00 - 0x64)
-    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x15
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x20
 }
 
 # Picks a random colour based on the hostname.
@@ -123,7 +123,9 @@ title "\w"
 if [ -z $VSCODE_IPC_HOOK_CLI ]; then
     export EDITOR=vim
 else
-    export EDITOR="code --wait"
+    export EDITOR=vim
+    # This doesn't work after a shell reconnect, sadly
+    # export EDITOR="code --wait"
 fi
 
 # Completion
