@@ -8,6 +8,7 @@ ln -sf $SCRIPT_DIR/.bashrc $HOME/.bashrc
 ln -sf $SCRIPT_DIR/.gitconfig $HOME/.gitconfig
 ln -sf $SCRIPT_DIR/.gitexclude $HOME/.gitexclude
 ln -sf $SCRIPT_DIR/.screenrc $HOME/.screenrc
+ln -sf $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
 
 # Install pyenv and friends
 if [ ! -d $HOME/.pyenv ]; then
