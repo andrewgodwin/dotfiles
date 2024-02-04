@@ -47,6 +47,7 @@ alias tkdir='cd ~/Programs/takahe; pyenv shell takahe'
 alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
 alias hydrae="ssh -t root@hydrae.aeracode.org -- screen -d -R"
 alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- screen -d -R"
+alias arbok-wake="wakeonlan C8:7F:54:69:65:83"
 
 # Shares current dir on port 8000
 alias sharedir='python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
@@ -67,9 +68,8 @@ function set730fan {
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x01 0x00
     # Set overall fan speed (last byte should be 0x00 - 0x64)
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x20
-    # Make fans 4 and 5 a bit faster for the PCIe zone
-    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x03 0x30
-    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x04 0x30
+    # Make fan 5 a bit faster for the PCIe zone
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x04 0x35
 }
 
 # Picks a random colour based on the hostname.
