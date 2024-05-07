@@ -21,4 +21,16 @@ fi
 
 # Install common packages
 sudo apt-get update
-sudo apt-get install -y build-essential python3-pip python3-dev tmux htop
+sudo apt-get install -y build-essential \
+    tmux \
+    htop \
+    python3-pip \
+    python3-dev \
+    python3-venv \
+    libssl-dev \
+    libreadline-dev \
+    libncurses-dev \
+    libbz2-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libffi-dev
