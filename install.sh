@@ -19,4 +19,4 @@ if [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
 fi
 
 # Install common packages
-apt-get install -y build-essential python3-pip
+sudo apt-get install -y build-essential python3-pip

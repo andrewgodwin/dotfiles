@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y git
+sudo apt-get install -y git
 
 if [ -d /mnt/c ]; then
     ln -s /mnt/c/Users/Andrew ~/WinUser
