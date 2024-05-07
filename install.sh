@@ -17,3 +17,6 @@ fi
 if [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
     git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 fi
+
+# Install common packages
+apt-get install -y build-essential python3-pip
