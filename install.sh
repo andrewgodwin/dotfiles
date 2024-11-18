@@ -25,7 +25,10 @@ sudo apt-get install -y build-essential \
     libbz2-dev \
     libjpeg-dev \
     libpng-dev \
-    libffi-dev
+    libffi-dev \
+    liblzma-dev \
+    libsqlite3-dev \
+    tcl-dev
 
 # Install pyenv and friends
 if [ ! -d $HOME/.pyenv ]; then
