@@ -48,6 +48,7 @@ alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
 alias hydrae="ssh -t root@hydrae.aeracode.org -- screen -d -R"
 alias novae="ssh -t novae.aeracode.org -- screen -d -R"
 alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- screen -d -R"
+alias rmzoneidentifier='find . -name "*:Zone.Identifier" -type f -delete'
 alias arbok-wake="wakeonlan C8:7F:54:69:65:83"
 
 # Shares current dir on port 8000
