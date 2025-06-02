@@ -47,7 +47,7 @@ alias tkdir='cd ~/Programs/takahe; pyenv shell takahe'
 alias aerdir='cd ~/Programs/aeracode; pyenv shell aeracode'
 alias hydrae="ssh -t root@hydrae.aeracode.org -- screen -d -R"
 alias novae="ssh -t novae.aeracode.org -- screen -d -R"
-alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- screen -d -R"
+alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- tmux attach"
 alias rmzoneidentifier='find . -name "*:Zone.Identifier" -type f -delete'
 alias arbok-wake="wakeonlan C8:7F:54:69:65:83"
 
