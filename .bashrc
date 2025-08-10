@@ -75,6 +75,17 @@ function set730fan {
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x04 0x35
 }
 
+function set730fanhigh {
+    USER=root
+    IP="192.168.2.4"
+    # Enable manual control
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x01 0x00
+    # Set overall fan speed (last byte should be 0x00 - 0x64)
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0xff 0x40
+    # Make fan 5 a bit faster for the PCIe zone
+    ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x04 0x60
+}
+
 # Picks a random colour based on the hostname.
 function color_from_hostname {
     if [ "$USER" == "root" ]; then
