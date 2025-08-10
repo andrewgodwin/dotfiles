@@ -49,6 +49,7 @@ alias hydrae="ssh -t root@hydrae.aeracode.org -- screen -d -R"
 alias novae="ssh -t novae.aeracode.org -- screen -d -R"
 alias charmeleon="ssh -t andrew@charmeleon.internal.aeracode.org -- tmux attach"
 alias rmzoneidentifier='find . -name "*:Zone.Identifier" -type f -delete'
+alias hawkmon="ssh -t ubuntu@hawkmon.wyvern-arctic.ts.net -- screen -d -R"
 alias arbok-wake="wakeonlan C8:7F:54:69:65:83"
 
 # Shares current dir on port 8000
