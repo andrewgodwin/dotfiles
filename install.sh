@@ -10,25 +10,27 @@ ln -sf $SCRIPT_DIR/.gitexclude $HOME/.gitexclude
 ln -sf $SCRIPT_DIR/.screenrc $HOME/.screenrc
 ln -sf $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
 
-# Install common packages
-sudo apt-get update
-sudo apt-get install -y build-essential \
-    tmux \
-    htop \
-    keychain \
-    python3-pip \
-    python3-dev \
-    python3-venv \
-    libssl-dev \
-    libreadline-dev \
-    libncurses-dev \
-    libbz2-dev \
-    libjpeg-dev \
-    libpng-dev \
-    libffi-dev \
-    liblzma-dev \
-    libsqlite3-dev \
-    tcl-dev
+# Install common packages on Debian/Ubuntu
+if [ -f "/usr/bin/apt" ]; then
+    sudo apt-get update
+    sudo apt-get install -y build-essential \
+        tmux \
+        htop \
+        keychain \
+        python3-pip \
+        python3-dev \
+        python3-venv \
+        libssl-dev \
+        libreadline-dev \
+        libncurses-dev \
+        libbz2-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libffi-dev \
+        liblzma-dev \
+        libsqlite3-dev \
+        tcl-dev
+fi
 
 # Install pyenv and friends
 if [ ! -d $HOME/.pyenv ]; then
