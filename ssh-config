@@ -1,0 +1,18 @@
+CanonicalizeHostname yes
+
+AddKeysToAgent yes
+
+IdentityFile ~/.ssh/id_ecdsa
+
+Host *
+  UseRoaming no
+
+Host charmeleon
+  User andrew
+  HostName 192.168.2.5
+
+Host andrew.console.splice.org.uk
+IdentityFile ~/.ssh/xen-shell-hydrae.key
+
+Host tape.splice.org.uk
+IdentityFile ~/.ssh/xen-shell-hydrae.key
