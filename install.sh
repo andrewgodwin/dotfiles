@@ -34,6 +34,13 @@ if [ -f "/usr/bin/apt" ]; then
         tcl-dev
 fi
 
+# Install common packages on Ublue/Bazzite
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    sudo brew install \
+        htop \
+        keychain
+fi
+
 # Install pyenv and friends
 if [ ! -d $HOME/.pyenv ]; then
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv

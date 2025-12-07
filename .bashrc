@@ -161,8 +161,8 @@ if [ -e ~/.ssh/config ]; then
 fi
 
 # If keychain is available, load it as a session
-if [ -e /usr/bin/keychain ] && [ -e $HOME/.ssh/id_ecdsa ]; then
-    /usr/bin/keychain -q --nogui $HOME/.ssh/id_ecdsa
+if type keychain >/dev/null 2>/dev/null && [ -e $HOME/.ssh/id_ecdsa ]; then
+    keychain -q --nogui $HOME/.ssh/id_ecdsa
     source $HOME/.keychain/$HOSTNAME-sh
 fi
 
