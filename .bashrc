@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Source system bashrc if it exists
+[ -f /etc/bashrc ] && source /etc/bashrc
+
 # Append to the history file, don't overwrite it
 shopt -s histappend
 HISTSIZE=20000
