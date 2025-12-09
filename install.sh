@@ -36,7 +36,7 @@ fi
 
 # Install common packages on Ublue/Bazzite
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
-    sudo brew install \
+    brew install \
         htop \
         keychain
 fi
