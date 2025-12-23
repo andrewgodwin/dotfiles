@@ -93,8 +93,8 @@ function set730fanhigh {
 function color_from_hostname {
     # Hostname specific overrides
     case $HOSTNAME in
-        "charmeleon") c="8;2;217;138;90" ;;
-        "charizard") c="8;2;179;78;61" ;;
+        "charmeleon") c="8;2;216;78;56" ;;
+        "charizard") c="8;2;183;88;25" ;;
         "abra") c="8;2;150;135;37" ;;
         "novae") c="8;2;108;102;188" ;;
         "hydrae") c="8;2;33;118;222" ;;
