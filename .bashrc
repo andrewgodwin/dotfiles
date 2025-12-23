@@ -89,14 +89,19 @@ function set730fanhigh {
     ipmitool -I lanplus -H $IP -U $USER -P $PASS raw 0x30 0x30 0x02 0x04 0x60
 }
 
-# Picks a random colour based on the hostname.
+# Picks a colour based on the hostname.
 function color_from_hostname {
-    if [ "$USER" == "root" ]; then
-        echo 1
-        return
-    fi
-        hash=`(echo $USER; hostname) | md5sum | awk '{print $1}'`
-        case ${hash#${hash%?}} in
+    # Hostname specific overrides
+    case $HOSTNAME in
+        "charmeleon") c="8;2;217;138;90" ;;
+        "charizard") c="8;2;179;78;61" ;;
+        "novae") c="8;2;108;102;188" ;;
+        "abra") c="8;2;150;135;37" ;;
+    esac
+    [ ! -z "$c" ] && echo $c && return
+    # Generic hashing
+    hash=`(echo $USER; hostname) | md5sum | awk '{print $1}'`
+    case ${hash#${hash%?}} in
         "0") c="5" ;; # purple
         "1") c="6" ;; # cyan
         "2") c="2" ;; # green
@@ -113,8 +118,17 @@ function color_from_hostname {
         "d") c="5" ;; # purple
         "e") c="4" ;; # blue
         "f") c="6" ;; # cyan
-        esac
-        echo $c
+    esac
+    echo $c
+}
+
+# Makes the username have a red background if root
+function color_from_username {
+    if [ "$USER" == "root" ]; then
+        echo 1
+    else
+        echo 0
+    fi
 }
 
 # VCS functions
@@ -135,7 +149,7 @@ command_exists () {
 # Customised prompt; shows git/venv status too
 PROMPT_DIRTRIM=2
 title () {
-    PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h \[\e[40m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[42m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
+    PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h \[\e[4`color_from_username`m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[42m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
 }
 title "\w"
 
