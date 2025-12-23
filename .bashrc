@@ -92,7 +92,7 @@ function set730fanhigh {
 # Picks a colour based on the hostname.
 function color_from_hostname {
     # Hostname specific overrides
-    case $HOSTNAME in
+    case ${HOSTNAME%%.*} in
         "charmeleon") c="8;2;216;78;56" ;;
         "charizard") c="8;2;183;88;25" ;;
         "abra") c="8;2;150;135;37" ;;
