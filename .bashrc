@@ -95,8 +95,9 @@ function color_from_hostname {
     case $HOSTNAME in
         "charmeleon") c="8;2;217;138;90" ;;
         "charizard") c="8;2;179;78;61" ;;
-        "novae") c="8;2;108;102;188" ;;
         "abra") c="8;2;150;135;37" ;;
+        "novae") c="8;2;108;102;188" ;;
+        "hydrae") c="8;2;33;118;222" ;;
     esac
     [ ! -z "$c" ] && echo $c && return
     # Generic hashing
