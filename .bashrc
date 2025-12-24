@@ -96,6 +96,7 @@ function color_from_hostname {
         "charmeleon") c="8;2;216;78;56" ;;
         "charizard") c="8;2;183;88;25" ;;
         "abra") c="8;5;100" ;;
+        "bellsprout") c="8;5;70" ;;
         "novae") c="8;5;55" ;;
         "hydrae") c="8;5;29" ;;
     esac
