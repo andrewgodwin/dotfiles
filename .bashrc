@@ -99,6 +99,7 @@ function color_from_hostname {
         "bellsprout") c="8;5;70" ;;
         "novae") c="8;5;55" ;;
         "hydrae") c="8;5;29" ;;
+        "gyarados") c="8;5;30" ;;
     esac
     [ ! -z "$c" ] && echo $c && return
     # Generic hashing
