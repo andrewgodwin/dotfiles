@@ -157,7 +157,7 @@ command_exists () {
 # Customised prompt; shows git/venv status too
 PROMPT_DIRTRIM=2
 title () {
-    PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h`containername` \[\e[4`color_from_username`m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[42m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
+    PS1="\[\e]0;$1\a\]"'\[\e[4`color_from_hostname`m\]\[\e[1;37m\] \h`containername` \[\e[4`color_from_username`m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \w \[\e[0m\]\[\e[1;37m\]\[\e[48;5;30m\] `parse_git_branch``virtualenvname`> \[\e[0m\] '
 }
 title "\w"
 
