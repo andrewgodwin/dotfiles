@@ -205,5 +205,5 @@ export GOPATH=~/Programs/go
 # PostgreSQL settings
 export PGUSER=postgres
 
-# Krew and custom bin
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$HOME/bin:$PATH"
+# Custom bins
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$HOME/bin:$HOME/.local/bin:$PATH"
