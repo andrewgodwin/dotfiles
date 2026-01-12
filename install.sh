@@ -19,6 +19,8 @@ if [ -f "/usr/bin/apt" ]; then
         tmux \
         htop \
         keychain \
+        mosh \
+        screen \
         python3-pip \
         python3-dev \
         python3-venv \
@@ -38,7 +40,8 @@ fi
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
     brew install \
         htop \
-        keychain
+        keychain \
+        mosh
 fi
 
 # Install pyenv and friends
