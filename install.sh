@@ -15,33 +15,13 @@ ln -sf $SCRIPT_DIR/ssh-config $HOME/.ssh/config
 # Install common packages on Debian/Ubuntu
 if [ -f "/usr/bin/apt" ]; then
     sudo apt-get update
-    sudo apt-get install -y build-essential \
-        tmux \
-        htop \
-        keychain \
-        mosh \
-        screen \
-        python3-pip \
-        python3-dev \
-        python3-venv \
-        libssl-dev \
-        libreadline-dev \
-        libncurses-dev \
-        libbz2-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libffi-dev \
-        liblzma-dev \
-        libsqlite3-dev \
-        tcl-dev
+    sudo apt-get install -y $(cat "$SCRIPT_DIR/packages/ubuntu-server-apt")
 fi
 
 # Install common packages on Ublue/Bazzite
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
-    brew install \
-        htop \
-        keychain \
-        mosh
+    brew install $(cat "$SCRIPT_DIR/packages/bazzite-desktop-homebrew")
+    flatpak install $(cat "$SCRIPT_DIR/packages/bazzite-desktop-flatpak")
 fi
 
 # Install pyenv and friends
