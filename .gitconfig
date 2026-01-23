@@ -36,9 +36,6 @@
 [push]
         default = simple
 
-[url "git@github.com:"]
-        insteadOf = https://github.com/
-
 [branch]
         autosetuprebase = always
         autosetupmerge = always
@@ -51,3 +48,6 @@
 
 [init]
         defaultBranch = main
+
+[include]
+        path = ~/.gitconfig.workstation

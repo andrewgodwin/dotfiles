@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sudo apt-get install -y git
+if [ -f "/usr/bin/apt" ]; then
+    sudo apt update
+    sudo apt install -y git
+fi
 
 if [ -d /mnt/c ]; then
     ln -s /mnt/c/Users/Andrew ~/WinUser
