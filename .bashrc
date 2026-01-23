@@ -101,6 +101,8 @@ function color_from_hostname {
         "novae") c="8;5;55" ;;
         "hydrae") c="8;5;29" ;;
         "gyarados") c="8;5;30" ;;
+        "shuckle") c="8;5;136" ;;
+        "aurorae") c="8;5;99" ;;
     esac
     [ ! -z "$c" ] && echo $c && return
     # Generic hashing
