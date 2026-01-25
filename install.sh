@@ -42,7 +42,7 @@ fi
 # Install common packages on Ublue/Bazzite
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
     brew install $(cat "$SCRIPT_DIR/packages/bazzite-desktop-homebrew")
-    flatpak install $(cat "$SCRIPT_DIR/packages/bazzite-desktop-flatpak")
+    flatpak install --system -y $(cat "$SCRIPT_DIR/packages/bazzite-desktop-flatpak")
 fi
 
 # Install pyenv and friends (workstation only)
