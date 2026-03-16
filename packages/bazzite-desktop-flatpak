@@ -6,7 +6,6 @@ com.slack.Slack
 com.visualstudio.code
 net.cozic.joplin_desktop
 org.deluge_torrent.deluge
-org.kde.konsole
 org.keepassxc.KeePassXC
 org.localsend.localsend_app
 org.telegram.desktop
