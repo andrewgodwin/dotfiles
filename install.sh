@@ -31,6 +31,12 @@ ln -sf $SCRIPT_DIR/.screenrc $HOME/.screenrc
 ln -sf $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.ssh
 ln -sf $SCRIPT_DIR/ssh-config $HOME/.ssh/config
+if [ -d ~/Sync ]; then
+    install -m 600 ~/Sync/dotfiles/.ssh/id_ecdsa ~/.ssh/id_ecdsa
+    install -m 600 ~/Sync/dotfiles/.ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
+fi
+
+
 
 # Link workstation-specific dotfiles
 if [ "$MODE" = "workstation" ]; then
