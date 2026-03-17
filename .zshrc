@@ -90,3 +90,6 @@ precmd() {
 }
 
 title '%~'
+
+# Custom bins
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"

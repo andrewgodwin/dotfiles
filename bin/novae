@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec ssh -t novae.aeracode.org -- screen -d -R

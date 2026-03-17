@@ -29,6 +29,7 @@ ln -sf $SCRIPT_DIR/.gitconfig $HOME/.gitconfig
 ln -sf $SCRIPT_DIR/.gitexclude $HOME/.gitexclude
 ln -sf $SCRIPT_DIR/.screenrc $HOME/.screenrc
 ln -sf $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
+ln -sfn $SCRIPT_DIR/bin $HOME/bin
 mkdir -p $HOME/.ssh
 ln -sf $SCRIPT_DIR/ssh-config $HOME/.ssh/config
 if [ -d ~/Sync ]; then

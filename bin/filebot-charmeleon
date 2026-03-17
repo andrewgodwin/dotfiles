@@ -1,0 +1,2 @@
+#!/bin/bash
+filebot -rename "$@" --apply prune -no-xattr --db TheTVDB --format "/mnt/Media/TV/{n}/{episode.special ? 'Specials' : 'Season '+s}/{n} - {s00e00} - {t}"
