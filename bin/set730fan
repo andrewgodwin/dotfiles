@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Set Dell R730 fan speed via IPMI.
+# Usage: set730fan [SPEED]
+#   SPEED is a hex value 0x00-0x64 for the general fan speed (default: 0x20).
+#   The PCIe zone (fan 5) is set to SPEED * 1.5, capped at 0x64.
+
+set -euo pipefail
+
+IPMI_USER=root
+IP="192.168.2.4"
+SPEED=${1:-0x20}
+
+# Convert to decimal for PCIe calculation
+SPEED_DEC=$((SPEED))
+PCIE_DEC=$(( SPEED_DEC * 3 / 2 ))
+if (( PCIE_DEC > 100 )); then
+    PCIE_DEC=100
+fi
+PCIE_HEX=$(printf "0x%02x" "$PCIE_DEC")
+
+# Enable manual control
+ipmitool -I lanplus -H "$IP" -U "$IPMI_USER" -P "$PASS" raw 0x30 0x30 0x01 0x00
+# Set overall fan speed
+ipmitool -I lanplus -H "$IP" -U "$IPMI_USER" -P "$PASS" raw 0x30 0x30 0x02 0xff "$SPEED"
+# Make fan 5 a bit faster for the PCIe zone
+ipmitool -I lanplus -H "$IP" -U "$IPMI_USER" -P "$PASS" raw 0x30 0x30 0x02 0x04 "$PCIE_HEX"

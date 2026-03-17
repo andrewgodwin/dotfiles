@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec python2 -c "import SimpleHTTPServer;SimpleHTTPServer.test()"
