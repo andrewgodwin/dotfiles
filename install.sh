@@ -33,8 +33,8 @@ ln -sfn $SCRIPT_DIR/bin $HOME/bin
 mkdir -p $HOME/.ssh
 ln -sf $SCRIPT_DIR/ssh-config $HOME/.ssh/config
 if [ -d ~/Sync ]; then
-    install -m 600 ~/Sync/dotfiles/.ssh/id_ecdsa ~/.ssh/id_ecdsa
-    install -m 600 ~/Sync/dotfiles/.ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_ecdsa ~/.ssh/id_ecdsa
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
 fi
 
 
