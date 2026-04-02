@@ -25,3 +25,4 @@ globalsDB.py
 .python-version
 _test_*
 .claude
+CLAUDE.md
