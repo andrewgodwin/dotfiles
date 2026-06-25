@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exec mosh andrew@charmeleon.internal.aeracode.org -- bash -c 'tmux attach || tmux new'
+exec mosh andrew@charmeleon.ts.aeracode.org -- bash -c 'tmux attach || tmux new'

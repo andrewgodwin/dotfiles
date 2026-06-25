@@ -1,0 +1,83 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_family": ".ZedMono",
+  "preferred_line_length": 119,
+  "soft_wrap": "bounded",
+  "agent": {
+    "dock": "right",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "openrouter/auto",
+      "enable_thinking": false
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "language_models": {
+    "openai_compatible": {}
+  },
+  "buffer_line_height": {
+    "custom": 1.4
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "ssh_connections": [
+    {
+      "host": "charmeleon",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/andrew"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/aeracode"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/aeratools"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/allweave/./"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/dotfiles"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/landcarve"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/llm-bias/./"]
+        },
+        {
+          "paths": ["/home/andrew/Programs/personal-infra/./"]
+        },
+        {
+          "paths": ["/home/andrew/Projects/2026/Terrain Frames"]
+        }
+      ]
+    }
+  ],
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  }
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ACTION="${1:?Error: argument not set. Usage: $0 enable|disable}"
+
+if [[ "$ACTION" == "disable" ]]; then
+  echo "Disabling sleep"
+  sudo pmset -b sleep 0; sudo pmset -b disablesleep 1 
+elif [[ "$ACTION" == "enable" ]]; then
+  echo "Enabling sleep"
+  sudo pmset -b sleep 5; sudo pmset -b disablesleep 0 
+else
+  echo "Unknown action: $ACTION"
+  exit 1
+fi
