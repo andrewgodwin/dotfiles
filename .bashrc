@@ -8,6 +8,7 @@
 shopt -s histappend
 HISTSIZE=20000
 HISTFILESIZE=20000
+PROMPT_COMMAND='history -a;history -n'
 
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
