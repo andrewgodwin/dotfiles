@@ -8,6 +8,7 @@ CanonicalizeHostname yes
 AddKeysToAgent yes
 
 IdentityFile ~/.ssh/id_ecdsa
+IdentityFile ~/.ssh/id_ed25519
 
 Host *
   UseRoaming no
