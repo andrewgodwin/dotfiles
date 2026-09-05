@@ -16,13 +16,13 @@
     "dock": "right",
     "default_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3.8-2.4t-a92b",
+      "model": "qwen/qwen3.8-2.4t-a95b",
       "enable_thinking": true,
     },
     "favorite_models": [
       {
         "provider": "openrouter",
-        "model": "qwen/qwen3.8-2.4t-a92b",
+        "model": "qwen/qwen3.8-2.4t-a95b",
         "enable_thinking": true,
       },
     ],
