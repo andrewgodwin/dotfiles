@@ -12,6 +12,7 @@
 *.hg
 .vs
 .vscode
+.zed
 __vm
 .codeintel
 test_settings*.py
