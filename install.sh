@@ -44,6 +44,18 @@ fi
 # Link workstation-specific dotfiles
 if [ "$MODE" = "workstation" ]; then
     ln -sf $SCRIPT_DIR/.gitconfig.workstation $HOME/.gitconfig.workstation
+
+    # Plasma virtual keyboard layout overlay (custom fallback main.qml, with
+    # symlinks back to the system layouts so the overlay directory still works)
+    PLASMA_LAYOUTS=$HOME/.local/share/plasma/keyboard/layouts
+    SYS_PLASMA_LAYOUTS=/usr/share/plasma/keyboard/layouts
+    mkdir -p $PLASMA_LAYOUTS/fallback
+    ln -sfn $SYS_PLASMA_LAYOUTS/en_GB $PLASMA_LAYOUTS/en_GB
+    ln -sfn $SYS_PLASMA_LAYOUTS/en_US $PLASMA_LAYOUTS/en_US
+    for f in dialpad.qml digits.qml handwriting.qml numbers.qml symbols.qml; do
+        ln -sf $SYS_PLASMA_LAYOUTS/fallback/$f $PLASMA_LAYOUTS/fallback/$f
+    done
+    ln -sf $SCRIPT_DIR/plasma-keyboard-layouts/main.qml $PLASMA_LAYOUTS/fallback/main.qml
 fi
 
 # Package installation (Linux only)
