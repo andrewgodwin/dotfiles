@@ -226,6 +226,11 @@ KeyboardLayout {
             smallTextVisible: true
         }
         Key {
+            key: Qt.Key_Up
+            displayText: "↑"
+            functionKey: true
+        }
+        Key {
             key: Qt.Key_Backslash
             text: "\\"
             alternativeKeys: "|`~"
@@ -255,20 +260,12 @@ KeyboardLayout {
             weight: normalKeyWidth
             Layout.fillWidth: false
         }
-        KeyboardColumn {
-            Layout.preferredWidth: normalKeyWidth
+        Key {
+            key: Qt.Key_Down
+            displayText: "↓"
+            functionKey: true
+            weight: normalKeyWidth
             Layout.fillWidth: false
-            Layout.fillHeight: true
-            Key {
-                key: Qt.Key_Up
-                displayText: "↑"
-                functionKey: true
-            }
-            Key {
-                key: Qt.Key_Down
-                displayText: "↓"
-                functionKey: true
-            }
         }
         Key {
             key: Qt.Key_Right
