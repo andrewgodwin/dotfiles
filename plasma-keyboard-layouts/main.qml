@@ -10,7 +10,7 @@ KeyboardLayout {
     inputMode: InputEngine.InputMode.Latin
     keyWeight: 160
     readonly property real normalKeyWidth: normalKey.width
-    readonly property real functionKeyWidth: mapFromItem(normalKey, normalKey.width / 2, 0).x
+    readonly property real functionKeyWidth: normalKeyWidth * 1.5
     KeyboardRow {
         Key {
             key: Qt.Key_Escape
