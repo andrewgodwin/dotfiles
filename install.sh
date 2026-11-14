@@ -37,6 +37,8 @@ ln -sf $SCRIPT_DIR/ssh-config $HOME/.ssh/config
 if [ -d ~/Sync ]; then
     install -m 600 ~/Sync/Dotfiles/.ssh/id_ecdsa ~/.ssh/id_ecdsa
     install -m 600 ~/Sync/Dotfiles/.ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_ed25519 ~/.ssh/id_ed25519
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub
 fi
 
 
@@ -73,13 +75,13 @@ if [ "$OS" = "Linux" ]; then
     fi
 
     # Install pyenv and friends (workstation only)
-    if [ "$MODE" = "workstation" ]; then
-        if [ ! -d $HOME/.pyenv ]; then
-            git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-            eval "$(pyenv init -)"
-        fi
-        if [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
-            git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-        fi
-    fi
+    # if [ "$MODE" = "workstation" ]; then
+    #     if [ ! -d $HOME/.pyenv ]; then
+    #         git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    #         eval "$(pyenv init -)"
+    #     fi
+    #     if [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
+    #         git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+    #     fi
+    # fi
 fi
