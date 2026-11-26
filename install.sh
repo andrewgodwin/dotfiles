@@ -66,12 +66,15 @@ if [ "$OS" = "Linux" ]; then
     if [ -f "/usr/bin/apt" ]; then
         sudo apt-get update
         sudo apt-get install -y $(cat "$SCRIPT_DIR/packages/ubuntu-server-apt")
-    fi
 
     # Install common packages on Ublue/Bazzite
-    if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    elif [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
         brew install $(cat "$SCRIPT_DIR/packages/bazzite-desktop-homebrew")
         flatpak install --system -y $(cat "$SCRIPT_DIR/packages/bazzite-desktop-flatpak")
+
+    # Install common packages on Fedora
+    elif [ -f "/usr/bin/dnf" ]; then
+        sudo dnf install -y $(cat "$SCRIPT_DIR/packages/fedora-desktop-dnf")
     fi
 
     # Install pyenv and friends (workstation only)
