@@ -1,0 +1,2 @@
+#!/bin/bash
+sed -i -E 's/^StartupWMClass=crx_([a-z]+)$/StartupWMClass=chrome-\1-Default/' ~/.local/share/applications/chrome-*-Default.desktop && kbuildsycoca6
