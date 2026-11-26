@@ -39,6 +39,8 @@ if [ -d ~/Sync ]; then
     install -m 600 ~/Sync/Dotfiles/.ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
     install -m 600 ~/Sync/Dotfiles/.ssh/id_ed25519 ~/.ssh/id_ed25519
     install -m 600 ~/Sync/Dotfiles/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_mldsa44_ed25519 ~/.ssh/id_mldsa44_ed25519
+    install -m 600 ~/Sync/Dotfiles/.ssh/id_mldsa44_ed25519.pub ~/.ssh/id_mldsa44_ed25519.pub
 fi
 
 

@@ -140,7 +140,7 @@ fi
 
 # If keychain is available, load it as a session
 if type keychain >/dev/null 2>/dev/null && [ -e $HOME/.ssh/id_ecdsa ]; then
-    keychain -q --nogui $HOME/.ssh/id_ecdsa
+    keychain -q --nogui $HOME/.ssh/id_ecdsa $HOME/.ssh/id_ed25519
     source $HOME/.keychain/$HOSTNAME-sh
 fi
 
